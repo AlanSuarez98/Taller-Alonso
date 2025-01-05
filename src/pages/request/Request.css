@@ -1,0 +1,126 @@
+.request {
+  width: 100%;
+  height: fit-content;
+  padding: 25px 0;
+  position: relative;
+  top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.boxRequest {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.requestForm {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.requestForm form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+.requestForm form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.requestForm form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.requestForm form button:hover {
+  background-color: red;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+.requestInfo {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.requestInfo h3 {
+  padding: 0 0 15px 0;
+}
+.boxImg {
+  width: 75%;
+  height: 250px;
+  overflow: hidden;
+  background-color: grey;
+}
+.infoCar {
+  width: 100%;
+  padding: 15px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  justify-content: center;
+}
+.infoCar h4 {
+  padding: 5px 0;
+  font-weight: lighter;
+}
+.infoCar h4 span {
+  font-weight: bold;
+}
+.oldModel {
+  margin: 10px 0 0 0;
+  background-color: black;
+  border: 5px solid white;
+  border-left: 2.5px solid white;
+  border-right: 2.5px solid white;
+  box-shadow: 0 0px 4px black;
+  color: white;
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2.5px;
+}
+.newModel {
+  margin: 10px 0 0 0;
+  background-color: white;
+  border: 2px solid black;
+  width: 50%;
+  text-align: center;
+  border-top: 8px solid rgb(3, 70, 143);
+  border-radius: 5px;
+}
+.datepicker {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+.error-message {
+  color: #f44336;
+  margin-top: 10px;
+}
