@@ -5,14 +5,13 @@ import Footer from "../../components/footer/Footer";
 import Nav from "../../components/nav/Nav";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import * as XLSX from "xlsx";
+import { toDate, toZonedTime } from "date-fns-tz";
 import "./Request.css";
 
 const Request = () => {
   const navigate = useNavigate();
   const { isAuthenticated, user } = useContext(AuthContext);
   const [selectedDateTime, setSelectedDateTime] = useState(null);
-  const [carDatabase, setCarDatabase] = useState([]);
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -23,34 +22,11 @@ const Request = () => {
     color: "",
     kilometraje: "",
     tipoServicio: "",
-    IMAGEN: "",
   });
+  const [message, setMessage] = useState({ text: "", type: "" });
 
-  // Cargar datos del Excel usando FileReader
-  const loadExcelData = useCallback(async () => {
-    try {
-      const response = await fetch("/car-database.xlsx"); // Asegúrate de que el archivo esté en la carpeta public
-      const blob = await response.blob();
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        const data = e.target.result;
-        const workbook = XLSX.read(data, { type: "array" });
-        const firstSheetName = workbook.SheetNames[0];
-        const worksheet = workbook.Sheets[firstSheetName];
-        const jsonData = XLSX.utils.sheet_to_json(worksheet);
-        setCarDatabase(jsonData);
-      };
-
-      reader.readAsArrayBuffer(blob);
-    } catch (error) {
-      console.error("Error loading Excel data:", error);
-    }
-  }, []);
-
-  useEffect(() => {
-    loadExcelData();
-  }, [loadExcelData]);
+  // Zona horaria de Argentina
+  const timeZone = "America/Argentina/Buenos_Aires";
 
   useEffect(() => {
     if (isAuthenticated && user) {
@@ -59,32 +35,19 @@ const Request = () => {
         nombre: user.nombre || "",
         email: user.email || "",
         patente: user.patente || "",
+        marca: user.marca || "",
+        modelo: user.modelo || "",
+        año: user.año || "",
+        color: user.color || "",
+        kilometraje: user.kilometraje || "",
       }));
     }
   }, [isAuthenticated, user]);
 
-  const findCarImage = useCallback(
-    (marca, modelo, color) => {
-      if (!marca || !modelo || !color || !carDatabase.length) return null;
-
-      const car = carDatabase.find(
-        (car) =>
-          car.marca?.toString().toLowerCase() === marca.toLowerCase() &&
-          car.modelo?.toString().toLowerCase() === modelo.toLowerCase() &&
-          car.COLOR?.toString().toLowerCase() === color.toLowerCase()
-      );
-
-      return car?.IMAGEN || null;
-    },
-    [carDatabase]
-  );
-
-  useEffect(() => {
-    const image = findCarImage(formData.marca, formData.modelo, formData.color);
-    if (image) {
-      setFormData((prev) => ({ ...prev, IMAGEN: image }));
-    }
-  }, [formData.marca, formData.modelo, formData.color, findCarImage]);
+  const showMessage = (text, type) => {
+    setMessage({ text, type });
+    setTimeout(() => setMessage({ text: "", type: "" }), 3000);
+  };
 
   const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
@@ -101,60 +64,85 @@ const Request = () => {
       }
 
       if (!selectedDateTime) {
-        alert("Por favor selecciona una fecha y hora para el turno");
+        showMessage(
+          "Por favor selecciona una fecha y hora para el turno",
+          "error"
+        );
         return;
       }
 
       const appointments =
         JSON.parse(localStorage.getItem("appointments")) || [];
 
-      // Convertir las fechas a la misma zona horaria para comparar
-      const selectedTime = new Date(selectedDateTime).getTime();
+      // Verificar si el usuario ya tiene un turno en curso
+      const userAppointment = appointments.find(
+        (apt) => apt.userId === user.email && apt.status === "En curso"
+      );
+      if (userAppointment) {
+        showMessage(
+          "Ya tienes un turno en curso. No puedes solicitar otro hasta que finalice.",
+          "error"
+        );
+        return;
+      }
+
+      // Convertir la fecha y hora seleccionada a UTC
+      const utcDateTime = toDate(selectedDateTime, { timeZone });
 
       const isTimeSlotTaken = appointments.some((apt) => {
-        const aptTime = new Date(apt.datetime).getTime();
-        return aptTime === selectedTime;
+        const aptDate = new Date(apt.datetime);
+        return aptDate.getTime() === utcDateTime.getTime();
       });
 
       if (isTimeSlotTaken) {
-        alert("Este horario ya no está disponible. Por favor selecciona otro.");
+        showMessage(
+          "Este horario ya no está disponible. Por favor selecciona otro.",
+          "error"
+        );
         return;
       }
 
       const newAppointment = {
         ...formData,
-        datetime: selectedDateTime.toISOString(),
+        datetime: utcDateTime.toISOString(), // Guardar en formato ISO (UTC)
         userId: user.email,
+        status: "En curso",
       };
-
       appointments.push(newAppointment);
       localStorage.setItem("appointments", JSON.stringify(appointments));
 
-      alert("Turno reservado exitosamente");
-      navigate("/mi-cuenta");
+      showMessage("Turno reservado exitosamente", "success");
+      setTimeout(() => navigate("/mi-cuenta"), 2000);
     },
-    [formData, selectedDateTime, isAuthenticated, navigate, user]
+    [formData, selectedDateTime, isAuthenticated, navigate, user, timeZone]
   );
 
-  const filterAvailableTimes = useCallback((time) => {
-    const timeToCheck = time instanceof Date ? time : new Date(time);
+  const filterAvailableTimes = useCallback(
+    (time) => {
+      const timeToCheck = time instanceof Date ? time : new Date(time);
 
-    // Verificar si es hora de trabajo (9:00 - 17:30)
-    const hours = timeToCheck.getHours();
-    const minutes = timeToCheck.getMinutes();
-    const timeInMinutes = hours * 60 + minutes;
+      // Convertir la hora a la zona horaria de Argentina
+      const zonedTime = toZonedTime(timeToCheck, timeZone);
 
-    if (timeInMinutes < 9 * 60 || timeInMinutes > 17 * 60 + 30) {
-      return false;
-    }
+      // Verificar si es hora de trabajo (9:00 - 18:00)
+      const hours = zonedTime.getHours();
+      const minutes = zonedTime.getMinutes();
+      const timeInMinutes = hours * 60 + minutes;
 
-    // Verificar si el horario ya está ocupado
-    const appointments = JSON.parse(localStorage.getItem("appointments")) || [];
-    return !appointments.some((apt) => {
-      const aptDate = new Date(apt.datetime);
-      return aptDate.getTime() === timeToCheck.getTime();
-    });
-  }, []);
+      if (timeInMinutes < 9 * 60 || timeInMinutes > 18 * 60) {
+        return false;
+      }
+
+      // Verificar si el horario ya está ocupado
+      const appointments =
+        JSON.parse(localStorage.getItem("appointments")) || [];
+      return !appointments.some((apt) => {
+        const aptDate = new Date(apt.datetime);
+        return aptDate.getTime() === timeToCheck.getTime();
+      });
+    },
+    [timeZone]
+  );
 
   const filterDate = useCallback((date) => {
     // Excluir sábados (6) y domingos (0)
@@ -168,7 +156,7 @@ const Request = () => {
     const current = new Date();
     current.setHours(9, 0, 0, 0);
     const end = new Date();
-    end.setHours(17, 30, 0, 0);
+    end.setHours(18, 0, 0, 0);
 
     while (current <= end) {
       const currentCopy = new Date(current); // Crea una copia para evitar problemas
@@ -180,58 +168,12 @@ const Request = () => {
     return excluded;
   }, [filterAvailableTimes]);
 
-  const getModelClass = useCallback(() => {
-    const year = parseInt(formData.año);
-    return year >= 2015 ? "newModel" : "oldModel";
-  }, [formData.año]);
-
-  const PreviewSection = useMemo(
-    () => (
-      <div className="requestInfo">
-        <h3>Vista previa</h3>
-        <div
-          className="boxImg"
-          style={{
-            backgroundImage: formData.IMAGEN
-              ? `url(${formData.IMAGEN})`
-              : "none",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            minHeight: "200px",
-          }}
-        />
-        <div className="infoCar">
-          <h4>
-            <span>Marca:</span> {formData.marca}
-          </h4>
-          <h4>
-            <span>Modelo:</span> {formData.modelo}
-          </h4>
-          <h4>
-            <span>Año:</span> {formData.año}
-          </h4>
-          <h4>
-            <span>Color:</span> {formData.color}
-          </h4>
-          <h4>
-            <span>Kilometraje:</span> {formData.kilometraje}
-          </h4>
-          <h4>
-            <span>Tipo de servicio:</span> {formData.tipoServicio}
-          </h4>
-          <h4>
-            <span>Patente:</span>
-            <div className={getModelClass()}>{formData.patente}</div>
-          </h4>
-        </div>
-      </div>
-    ),
-    [formData, getModelClass]
-  );
-
   return (
     <>
       <Nav />
+      {message.text && (
+        <div className={`message ${message.type}`}>{message.text}</div>
+      )}
       <div className="request">
         <h2>Turnos</h2>
         <div className="boxRequest">
@@ -313,7 +255,7 @@ const Request = () => {
 
               <DatePicker
                 selected={selectedDateTime}
-                onChange={(date) => setSelectedDateTime(date)} // No ajustes manualmente aquí
+                onChange={(date) => setSelectedDateTime(date)}
                 showTimeSelect
                 timeFormat="HH:mm"
                 timeIntervals={30}
@@ -322,8 +264,8 @@ const Request = () => {
                 placeholderText="Selecciona fecha y hora"
                 className="datepicker"
                 minDate={new Date()}
-                minTime={new Date().setHours(9, 0)}
-                maxTime={new Date().setHours(17, 30)}
+                minTime={new Date(new Date().setHours(9, 0, 0))}
+                maxTime={new Date(new Date().setHours(18, 0, 0))}
                 filterDate={filterDate}
                 filterTime={filterAvailableTimes}
                 excludeTimes={excludeTimes}
@@ -333,7 +275,25 @@ const Request = () => {
               <button type="submit">Solicitar turno</button>
             </form>
           </div>
-          {PreviewSection}
+          <div className="infoRequest">
+            <h3>Información</h3>
+            <p>
+              Para solicitar un turno, completa el formulario con tus datos y
+              selecciona una fecha y hora disponible.
+            </p>
+            <p>
+              Una vez que hayas solicitado un turno, recibirás un email de
+              confirmación.
+            </p>
+            <p>
+              Si tienes un turno en curso, no podrás solicitar otro hasta que
+              finalice.
+            </p>
+            <p>
+              <strong>Horario de atención:</strong> Lunes a viernes de 9:00 hs a
+              18:00 hs.
+            </p>
+          </div>
         </div>
       </div>
       <Footer />

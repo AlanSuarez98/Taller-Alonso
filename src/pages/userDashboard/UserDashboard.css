@@ -1,0 +1,433 @@
+@media (max-width: 425px) {
+  .userDashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 75px;
+    padding: 50px 0;
+  }
+
+  .userBoxDashboard {
+    background-color: #f1f1f1;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  .logout {
+    position: relative;
+    left: 35px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .logout:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .infoUser {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    width: 90%;
+  }
+
+  .requestUser {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .boxRequestUser {
+    width: 90%;
+    height: 200px; /* Alto fijo para el contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Habilitar scroll vertical */
+    overflow-x: hidden;
+    padding: 10px 25px; /* Ajustar el padding */
+  }
+
+  .requestUserForm {
+    width: 100%;
+    background-color: #c9c8c8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 35px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .requestUserForm p {
+    text-align: center;
+  }
+
+  .requestUserForm button {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .requestUserForm button:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .userDashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 75px;
+    padding: 50px 0;
+  }
+
+  .userBoxDashboard {
+    background-color: #f1f1f1;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  .logout {
+    position: relative;
+    left: 35px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .logout:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .infoUser {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    width: 90%;
+  }
+
+  .requestUser {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .boxRequestUser {
+    width: 90%;
+    height: 200px; /* Alto fijo para el contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Habilitar scroll vertical */
+    overflow-x: hidden;
+    padding: 10px 25px; /* Ajustar el padding */
+  }
+
+  .requestUserForm {
+    width: 100%;
+    background-color: #c9c8c8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 35px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .requestUserForm p {
+    text-align: center;
+  }
+
+  .requestUserForm button {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .requestUserForm button:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .userDashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 75px;
+    padding: 50px 0;
+  }
+
+  .userBoxDashboard {
+    background-color: #f1f1f1;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  .logout {
+    position: relative;
+    left: 400px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .logout:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .infoUser {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    width: 50%;
+  }
+
+  .requestUser {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .boxRequestUser {
+    width: 90%;
+    height: 400px; /* Alto fijo para el contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Habilitar scroll vertical */
+    overflow-x: hidden;
+    padding: 10px 25px; /* Ajustar el padding */
+  }
+
+  .requestUserForm {
+    width: 100%;
+    background-color: #c9c8c8;
+    display: flex;
+    padding: 35px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .requestUserForm p {
+    text-align: center;
+  }
+
+  .requestUserForm button {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .requestUserForm button:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .userDashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 75px;
+    padding: 50px 0;
+  }
+
+  .userBoxDashboard {
+    background-color: #f1f1f1;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  .logout {
+    position: relative;
+    left: 400px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .logout:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .infoUser {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    width: 50%;
+  }
+
+  .requestUser {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .boxRequestUser {
+    width: 90%;
+    height: 400px; /* Alto fijo para el contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Habilitar scroll vertical */
+    overflow-x: hidden;
+    padding: 10px 25px; /* Ajustar el padding */
+  }
+
+  .requestUserForm {
+    width: 100%;
+    background-color: #c9c8c8;
+    display: flex;
+    padding: 35px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .requestUserForm p {
+    text-align: center;
+  }
+
+  .requestUserForm button {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .requestUserForm button:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
+@media (min-width: 1441px) {
+  .userDashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 75px;
+    padding: 50px 0;
+  }
+
+  .userBoxDashboard {
+    background-color: #f1f1f1;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  .logout {
+    position: relative;
+    left: 400px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .logout:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .infoUser {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    width: 50%;
+  }
+
+  .requestUser {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .boxRequestUser {
+    width: 90%;
+    height: 400px; /* Alto fijo para el contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Habilitar scroll vertical */
+    overflow-x: hidden;
+    padding: 10px 25px; /* Ajustar el padding */
+  }
+
+  .requestUserForm {
+    width: 100%;
+    background-color: #c9c8c8;
+    display: flex;
+    padding: 35px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .requestUserForm p {
+    text-align: center;
+  }
+
+  .requestUserForm button {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .requestUserForm button:hover {
+    background-color: red;
+    color: white;
+  }
+}

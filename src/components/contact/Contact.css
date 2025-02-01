@@ -1,37 +1,213 @@
-.contact {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+@media (max-width: 425px) {
+  .contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .contact h2 {
+    padding: 0 0 25px 0;
+  }
+  .boxContact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .mapPreview {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .textContact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .textContact p {
+    width: 75%;
+    padding: 10px 0;
+  }
+  .textContact p span {
+    font-weight: bold;
+  }
+  .mapPreview {
+    width: 50%;
+  }
+  .span {
+    font-weight: bold;
+  }
 }
-.contact h2 {
-  padding: 0 0 25px 0;
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .contact h2 {
+    padding: 0 0 25px 0;
+  }
+  .boxContact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .mapPreview {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .textContact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .textContact p {
+    width: 75%;
+    padding: 10px 0;
+  }
+  .textContact p span {
+    font-weight: bold;
+  }
+  .mapPreview {
+    width: 50%;
+  }
+  .span {
+    font-weight: bold;
+  }
 }
-.boxContact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .contact h2 {
+    padding: 0 0 25px 0;
+  }
+  .boxContact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .textContact {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  .textContact p {
+    width: 75%;
+    padding: 10px 0;
+  }
+  .textContact p span {
+    font-weight: bold;
+  }
+  .mapPreview {
+    width: 50%;
+  }
+  .span {
+    font-weight: bold;
+  }
 }
-.textContact {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .contact h2 {
+    padding: 0 0 25px 0;
+  }
+  .boxContact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .textContact {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  .textContact p {
+    width: 75%;
+    padding: 10px 0;
+  }
+  .textContact p span {
+    font-weight: bold;
+  }
+  .mapPreview {
+    width: 50%;
+  }
+  .span {
+    font-weight: bold;
+  }
 }
-.textContact p {
-  width: 75%;
-  padding: 10px 0;
-}
-.textContact p span {
-  font-weight: bold;
-}
-.mapPreview {
-  width: 50%;
-}
-.span {
-  font-weight: bold;
+
+@media (min-width: 1441px) {
+  .contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .contact h2 {
+    padding: 0 0 25px 0;
+  }
+  .boxContact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .textContact {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  .textContact p {
+    width: 75%;
+    padding: 10px 0;
+  }
+  .textContact p span {
+    font-weight: bold;
+  }
+  .mapPreview {
+    width: 50%;
+  }
+  .span {
+    font-weight: bold;
+  }
 }

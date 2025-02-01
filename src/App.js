@@ -1,59 +1,67 @@
-// App.js
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
-import Dashboard from "./pages/dashboard/Dashboard"; // Ruta protegida
+import Dashboard from "./pages/dashboard/Dashboard";
 import { AuthProvider } from "./service/AuthContext";
 import ProtectedRoute from "./service/ProtectedRoute";
 import UserDashboard from "./pages/userDashboard/UserDashboard";
 import Request from "./pages/request/Request";
 
+// Crear un componente wrapper para el AuthProvider
+const AuthWrapper = ({ children }) => {
+  return <AuthProvider>{children}</AuthProvider>;
+};
+
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: (
+        <AuthWrapper>
+          <Home />
+        </AuthWrapper>
+      ),
     },
     {
       path: "/iniciar-sesion",
       element: (
-        <AuthProvider>
+        <AuthWrapper>
           <Login />
-        </AuthProvider>
+        </AuthWrapper>
       ),
     },
     {
       path: "/administracion",
       element: (
-        <AuthProvider>
+        <AuthWrapper>
           <ProtectedRoute requiredRole={true}>
             <Dashboard />
           </ProtectedRoute>
-        </AuthProvider>
+        </AuthWrapper>
       ),
     },
     {
       path: "/mi-cuenta",
       element: (
-        <AuthProvider>
+        <AuthWrapper>
           <ProtectedRoute requiredRole={false}>
             <UserDashboard />
           </ProtectedRoute>
-        </AuthProvider>
+        </AuthWrapper>
       ),
     },
     {
       path: "/turnos",
-      element: <Request />,
+      element: (
+        <AuthWrapper>
+          <Request />
+        </AuthWrapper>
+      ),
     },
   ]);
 
-  return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

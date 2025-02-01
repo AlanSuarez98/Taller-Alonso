@@ -1,42 +1,224 @@
-.serviceList {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
-  overflow: hidden;
+@media (max-width: 425px) {
+  .serviceList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    overflow: hidden;
+  }
+  .titleService {
+    padding: 20px 0 25px 0;
+  }
+  .boxService {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 350px);
+    grid-gap: 20px;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cardService {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+  }
+  .cardService img {
+    width: 100%;
+    padding: 0 0 10px 0;
+  }
+  .cardService h2 {
+    font-weight: 500;
+    padding: 0 0 10px 0;
+  }
+  .cardService p {
+    font-weight: regular;
+    color: rgb(77, 76, 76);
+    width: 85%;
+    text-align: center;
+  }
 }
-.titleService {
-  padding: 20px 0 25px 0;
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .serviceList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    overflow: hidden;
+  }
+  .titleService {
+    padding: 20px 0 25px 0;
+  }
+  .boxService {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 350px);
+    grid-gap: 20px;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cardService {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+  }
+  .cardService img {
+    width: 100%;
+    padding: 0 0 10px 0;
+  }
+  .cardService h2 {
+    font-weight: 500;
+    padding: 0 0 10px 0;
+  }
+  .cardService p {
+    font-weight: regular;
+    color: rgb(77, 76, 76);
+    width: 85%;
+    text-align: center;
+  }
 }
-.boxService {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 350px);
-  grid-gap: 5px;
-  justify-content: center;
-  overflow: hidden;
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .serviceList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    overflow: hidden;
+  }
+  .titleService {
+    padding: 20px 0 25px 0;
+  }
+  .boxService {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-gap: 5px;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cardService {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+  }
+  .cardService img {
+    width: 100%;
+    padding: 0 0 10px 0;
+  }
+  .cardService h2 {
+    font-weight: 500;
+    padding: 0 0 10px 0;
+  }
+  .cardService p {
+    font-weight: regular;
+    color: rgb(77, 76, 76);
+    width: 85%;
+    text-align: center;
+  }
 }
-.cardService {
-  width: 350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  overflow: hidden;
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .serviceList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    overflow: hidden;
+  }
+  .titleService {
+    padding: 20px 0 25px 0;
+  }
+  .boxService {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-gap: 5px;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cardService {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+  }
+  .cardService img {
+    width: 100%;
+    padding: 0 0 10px 0;
+  }
+  .cardService h2 {
+    font-weight: 500;
+    padding: 0 0 10px 0;
+  }
+  .cardService p {
+    font-weight: regular;
+    color: rgb(77, 76, 76);
+    width: 85%;
+    text-align: center;
+  }
 }
-.cardService img {
-  width: 100%;
-  padding: 0 0 10px 0;
-}
-.cardService h2 {
-  font-weight: 500;
-  padding: 0 0 10px 0;
-}
-.cardService p {
-  font-weight: lighter;
-  color: rgb(77, 76, 76);
-  width: 85%;
-  text-align: center;
+
+@media (min-width: 1441px) {
+  .serviceList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    overflow: hidden;
+  }
+  .titleService {
+    padding: 20px 0 25px 0;
+  }
+  .boxService {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-gap: 5px;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cardService {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+  }
+  .cardService img {
+    width: 100%;
+    padding: 0 0 10px 0;
+  }
+  .cardService h2 {
+    font-weight: 500;
+    padding: 0 0 10px 0;
+  }
+  .cardService p {
+    font-weight: regular;
+    color: rgb(77, 76, 76);
+    width: 85%;
+    text-align: center;
+  }
 }

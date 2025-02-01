@@ -1,17 +1,20 @@
+// Nav.js
 import "./Nav.css";
 import logo from "../../assets/Logo.png";
-import Icon from "../icon/Icon";
-import { faWrench } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../service/AuthContext";
 
 const Nav = () => {
-  const navigate = useNavigate();
+  "";
   const { isAuthenticated, user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     navigate("/iniciar-sesion");
+  };
+  const handleHome = () => {
+    navigate("/");
   };
 
   const shifts = () => {
@@ -25,30 +28,30 @@ const Nav = () => {
       navigate("/mi-cuenta");
     }
   };
-
   return (
     <div className="nav">
-      <div className="logo">
+      <div className="logo" onClick={handleHome}>
         <img src={logo} alt="Logo Alosno" />
         <h2>Alonso</h2>
       </div>
       <div className="textNav">
         {isAuthenticated ? (
           <>
+            <button className="btnHome" onClick={handleHome}>
+              Inicio
+            </button>
             <button className="shifts" onClick={shifts}>
               Turnos
             </button>
             <button className="btnLogin" onClick={handleAccount}>
               Mi cuenta
             </button>
-            {user?.isAdmin && (
-              <button className="btnSetting">
-                <Icon icon={faWrench} />
-              </button>
-            )}
           </>
         ) : (
           <>
+            <button className="btnHome" onClick={handleHome}>
+              Inicio
+            </button>
             <button className="shifts" onClick={shifts}>
               Turnos
             </button>

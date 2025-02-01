@@ -1,0 +1,540 @@
+@media (max-width: 425px) {
+  .dashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 75px;
+    padding: 50px 0;
+  }
+  .titleAdmin {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+  }
+  .logoutAdmin {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .logoutAdmin:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .boxRequestShift {
+    padding: 20px 0; /* Reducir el padding superior e inferior */
+    width: 90%;
+    height: 250px; /* Alto fijo para el contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Habilitar scroll vertical */
+    overflow-x: hidden;
+  }
+
+  .requestUserShifts {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .requestUserFormShifts {
+    width: 100%;
+    background-color: #c9c8c8;
+    display: flex;
+    padding: 35px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .appointmentInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .customerInfo,
+  .carInfo,
+  .shiftInfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    margin: 10px 0;
+    padding: 15px 0;
+    justify-content: space-between;
+  }
+
+  .customerInfo p,
+  .carInfo p,
+  .shiftInfo p {
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .confirmBtn,
+  .cancelBtn,
+  .finalizeBtn {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .cancelBtn:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .confirmBtn:hover {
+    background-color: green;
+    color: white;
+  }
+  .finalizeBtn:hover {
+    background-color: rgb(1, 168, 173);
+    color: white;
+  }
+  .appointmentActions input {
+    display: flex;
+    width: 135px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .dashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 75px;
+    padding: 50px 0;
+  }
+  .titleAdmin {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+  }
+  .logoutAdmin {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .logoutAdmin:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .boxRequestShift {
+    padding: 20px 0; /* Reducir el padding superior e inferior */
+    width: 90%;
+    height: 250px; /* Alto fijo para el contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Habilitar scroll vertical */
+    overflow-x: hidden;
+  }
+
+  .requestUserShifts {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .requestUserFormShifts {
+    width: 100%;
+    background-color: #c9c8c8;
+    display: flex;
+    padding: 35px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .appointmentInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .customerInfo,
+  .carInfo,
+  .shiftInfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    margin: 10px 0;
+    padding: 15px 0;
+    justify-content: space-between;
+  }
+
+  .customerInfo p,
+  .carInfo p,
+  .shiftInfo p {
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .confirmBtn,
+  .cancelBtn,
+  .finalizeBtn {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .cancelBtn:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .confirmBtn:hover {
+    background-color: green;
+    color: white;
+  }
+  .finalizeBtn:hover {
+    background-color: rgb(1, 168, 173);
+    color: white;
+  }
+  .appointmentActions input {
+    display: flex;
+    width: 135px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .dashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 75px;
+    padding: 50px 0;
+  }
+
+  .logoutAdmin {
+    position: relative;
+    left: 200px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .logoutAdmin:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .boxRequestShift {
+    padding: 20px 0; /* Reducir el padding superior e inferior */
+    width: 90%;
+    height: 500px; /* Alto fijo para el contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Habilitar scroll vertical */
+    overflow-x: hidden;
+  }
+
+  .requestUserShifts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .requestUserFormShifts {
+    width: 100%;
+    background-color: #c9c8c8;
+    display: flex;
+    padding: 35px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .appointmentInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .customerInfo,
+  .carInfo,
+  .shiftInfo {
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
+  }
+
+  .customerInfo p,
+  .carInfo p,
+  .shiftInfo p {
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .confirmBtn,
+  .cancelBtn,
+  .finalizeBtn {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .cancelBtn:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .confirmBtn:hover {
+    background-color: green;
+    color: white;
+  }
+  .finalizeBtn:hover {
+    background-color: rgb(1, 168, 173);
+    color: white;
+  }
+  .appointmentActions input {
+    display: flex;
+    width: 135px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .dashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 75px;
+    padding: 50px 0;
+  }
+
+  .logoutAdmin {
+    position: relative;
+    left: 200px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .logoutAdmin:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .boxRequestShift {
+    padding: 20px 0; /* Reducir el padding superior e inferior */
+    width: 90%;
+    height: 500px; /* Alto fijo para el contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Habilitar scroll vertical */
+    overflow-x: hidden;
+  }
+
+  .requestUserShifts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .requestUserFormShifts {
+    width: 100%;
+    background-color: #c9c8c8;
+    display: flex;
+    padding: 35px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .appointmentInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .customerInfo,
+  .carInfo,
+  .shiftInfo {
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
+  }
+
+  .customerInfo p,
+  .carInfo p,
+  .shiftInfo p {
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .confirmBtn,
+  .cancelBtn,
+  .finalizeBtn {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .cancelBtn:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .confirmBtn:hover {
+    background-color: green;
+    color: white;
+  }
+  .finalizeBtn:hover {
+    background-color: rgb(1, 168, 173);
+    color: white;
+  }
+  .appointmentActions input {
+    display: flex;
+    width: 135px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1441px) {
+  .dashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 75px;
+    padding: 50px 0;
+  }
+
+  .logoutAdmin {
+    position: relative;
+    left: 200px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .logoutAdmin:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .boxRequestShift {
+    padding: 20px 0; /* Reducir el padding superior e inferior */
+    width: 90%;
+    height: 500px; /* Alto fijo para el contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Habilitar scroll vertical */
+    overflow-x: hidden;
+  }
+
+  .requestUserShifts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .requestUserFormShifts {
+    width: 100%;
+    background-color: #c9c8c8;
+    display: flex;
+    padding: 35px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .appointmentInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .customerInfo,
+  .carInfo,
+  .shiftInfo {
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
+  }
+
+  .customerInfo p,
+  .carInfo p,
+  .shiftInfo p {
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .confirmBtn,
+  .cancelBtn,
+  .finalizeBtn {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .cancelBtn:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .confirmBtn:hover {
+    background-color: green;
+    color: white;
+  }
+  .finalizeBtn:hover {
+    background-color: rgb(1, 168, 173);
+    color: white;
+  }
+  .appointmentActions input {
+    display: flex;
+    width: 135px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

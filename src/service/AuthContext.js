@@ -8,12 +8,19 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const activeUser = JSON.parse(localStorage.getItem("activeUser"));
-    if (activeUser) {
-      setUser(activeUser);
-      setIsAuthenticated(true);
-    }
-    setIsLoading(false);
+    const checkAuth = () => {
+      const activeUser = JSON.parse(localStorage.getItem("activeUser"));
+      if (activeUser) {
+        setUser(activeUser);
+        setIsAuthenticated(true);
+      } else {
+        setUser(null);
+        setIsAuthenticated(false);
+      }
+      setIsLoading(false);
+    };
+
+    checkAuth();
   }, []);
 
   const login = (userData) => {
@@ -22,6 +29,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("activeUser", JSON.stringify(userWithRole));
     setUser(userWithRole);
     setIsAuthenticated(true);
+    return isAdmin ? "/administracion" : "/mi-cuenta";
   };
 
   const logout = () => {
@@ -32,7 +40,13 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, isLoading, user, login, logout }}
+      value={{
+        isAuthenticated,
+        isLoading,
+        user,
+        login,
+        logout,
+      }}
     >
       {children}
     </AuthContext.Provider>
