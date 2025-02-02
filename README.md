@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Taller Mecánico Alonso
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción del Proyecto
 
-## Available Scripts
+Taller Mecánico Alonso es una plataforma web diseñada para la gestión eficiente de turnos en un taller mecánico. La aplicación permite a los clientes solicitar turnos, dar seguimiento a sus citas y descargar facturas, mientras que los administradores pueden gestionar los turnos y organizar el flujo de trabajo del taller.
 
-In the project directory, you can run:
+El proyecto está desarrollado con **React.js**, asegurando compatibilidad con todos los dispositivos y ofreciendo una experiencia de usuario fluida y eficiente.
 
-### `npm start`
+## Funcionalidades Principales
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Inicio
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Presentación del taller mecánico.
+- Información de contacto, horarios y servicios disponibles.
 
-### `npm test`
+### Login
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Registro de nuevos usuarios.
+- Inicio de sesión para usuarios registrados.
+- Almacenamiento seguro de datos en **localStorage**.
 
-### `npm run build`
+### Dashboard (Administrador)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Visualización del email y rol del administrador.
+- Gestión de turnos solicitados por clientes.
+- Listado de turnos con detalles del cliente, vehículo y horario.
+- Opciones para **confirmar, cancelar y finalizar turnos**.
+- Posibilidad de adjuntar facturas en formato **PDF** a los turnos finalizados.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Dashboard (Cliente)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Gestión de datos personales.
+- Visualización y cancelación de turnos solicitados.
+- Seguimiento del estado del turno.
+- Descarga de facturas generadas por el administrador.
 
-### `npm run eject`
+### Turnos
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Formulario para solicitar turnos.
+- Selector de fecha y hora (✨ **DatePicker**), con horarios de atención de **lunes a viernes de 9:00 AM a 6:00 PM**.
+- Requiere que el usuario esté logueado para solicitar un turno.
+- Restricción de nuevos turnos hasta que el estado de un turno previo sea "Confirmado" o "Finalizado".
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tecnologías Utilizadas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **React.js**: Framework principal para el desarrollo del frontend.
+- **localStorage**: Para almacenamiento de datos del usuario.
+- **DatePicker**: Para selección de fecha y hora.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Instalación y Uso
 
-## Learn More
+1. Clonar el repositorio:
+   ```sh
+   git clone https://github.com/tuusuario/taller-mecanico-alonso.git
+   ```
+2. Acceder al directorio del proyecto:
+   ```sh
+   cd taller-mecanico-alonso
+   ```
+3. Instalar dependencias:
+   ```sh
+   npm install
+   ```
+4. Iniciar la aplicación:
+   ```sh
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Licencia y Derechos de Autor
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Este proyecto está protegido por derechos de autor y es propiedad exclusiva de **Alan Suárez**. Se prohíbe la copia, distribución o modificación sin el consentimiento explícito del autor.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**© 2024 Alan Suárez - Todos los derechos reservados.**
