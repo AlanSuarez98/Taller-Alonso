@@ -5,7 +5,7 @@
     top: 0;
     z-index: 9999;
     height: 75px;
-    background-color: black;
+    background-color: rgb(34, 153, 113);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -73,7 +73,7 @@
     top: 0;
     z-index: 9999;
     height: 75px;
-    background-color: black;
+    background-color: rgb(34, 153, 113);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -141,7 +141,7 @@
     top: 0;
     z-index: 9999;
     height: 75px;
-    background-color: black;
+    background-color: rgb(34, 153, 113);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -159,7 +159,7 @@
     height: 75%;
   }
   .logo h2 {
-    color: grey;
+    color: white;
   }
   .textNav {
     display: flex;
@@ -209,7 +209,7 @@
     top: 0;
     z-index: 9999;
     height: 75px;
-    background-color: black;
+    background-color: rgb(34, 153, 113);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -227,7 +227,7 @@
     height: 75%;
   }
   .logo h2 {
-    color: grey;
+    color: white;
   }
   .textNav {
     display: flex;
@@ -248,7 +248,7 @@
   .btnLogin:hover,
   .shifts:hover,
   .btnHome:hover {
-    background-color: red;
+    background-color: rgb(32, 136, 101);
     transition: 0.2s ease-in-out all;
   }
   .btnSetting {
@@ -277,7 +277,7 @@
     top: 0;
     z-index: 9999;
     height: 75px;
-    background-color: black;
+    background-color: rgb(34, 153, 113);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -295,7 +295,7 @@
     height: 75%;
   }
   .logo h2 {
-    color: grey;
+    color: white;
   }
   .textNav {
     display: flex;

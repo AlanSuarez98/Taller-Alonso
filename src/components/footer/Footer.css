@@ -1,7 +1,7 @@
 @media (max-width: 425px) {
   .footer {
     width: 100%;
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(34, 153, 113);
     color: white;
     margin: 50px 0 0 0;
     display: flex;
@@ -23,7 +23,7 @@
     padding: 5px 0;
   }
   .taller p {
-    color: rgb(173, 173, 173);
+    color: rgb(228, 227, 227);
   }
   .social {
     width: 45%;
@@ -38,7 +38,7 @@
   .social button {
     background-color: transparent;
     cursor: pointer;
-    color: rgb(173, 173, 173);
+    color: rgb(228, 227, 227);
     border: none;
     margin: 10px 0;
     transition: 0.2s ease-in-out all;
@@ -60,7 +60,7 @@
 @media (min-width: 426px) and (max-width: 768px) {
   .footer {
     width: 100%;
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(34, 153, 113);
     color: white;
     margin: 50px 0 0 0;
     display: flex;
@@ -82,7 +82,7 @@
     padding: 5px 0;
   }
   .taller p {
-    color: rgb(173, 173, 173);
+    color: rgb(228, 227, 227);
   }
   .social {
     width: 45%;
@@ -97,7 +97,7 @@
   .social button {
     background-color: transparent;
     cursor: pointer;
-    color: rgb(173, 173, 173);
+    color: rgb(228, 227, 227);
     border: none;
     margin: 10px 0;
     transition: 0.2s ease-in-out all;
@@ -119,7 +119,7 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .footer {
     width: 100%;
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(34, 153, 113);
     color: white;
     margin: 50px 0 0 0;
     display: flex;
@@ -141,7 +141,7 @@
     padding: 5px 0;
   }
   .taller p {
-    color: rgb(173, 173, 173);
+    color: rgb(228, 227, 227);
   }
   .social {
     margin: 0 100px 0 0;
@@ -156,7 +156,7 @@
   .social button {
     background-color: transparent;
     cursor: pointer;
-    color: rgb(173, 173, 173);
+    color: rgb(228, 227, 227);
     border: none;
     margin: 10px 0;
     transition: 0.2s ease-in-out all;
@@ -178,7 +178,7 @@
 @media (min-width: 1025px) and (max-width: 1440px) {
   .footer {
     width: 100%;
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(34, 153, 113);
     color: white;
     margin: 50px 0 0 0;
     display: flex;
@@ -200,7 +200,7 @@
     padding: 5px 0;
   }
   .taller p {
-    color: rgb(173, 173, 173);
+    color: rgb(228, 227, 227);
   }
   .social {
     margin: 0 100px 0 0;
@@ -215,7 +215,7 @@
   .social button {
     background-color: transparent;
     cursor: pointer;
-    color: rgb(173, 173, 173);
+    color: rgb(228, 227, 227);
     border: none;
     margin: 10px 0;
     transition: 0.2s ease-in-out all;
@@ -237,7 +237,7 @@
 @media (min-width: 1441px) {
   .footer {
     width: 100%;
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(34, 153, 113);
     color: white;
     margin: 50px 0 0 0;
     display: flex;
@@ -259,7 +259,7 @@
     padding: 5px 0;
   }
   .taller p {
-    color: rgb(173, 173, 173);
+    color: rgb(228, 227, 227);
   }
   .social {
     margin: 0 100px 0 0;
@@ -274,7 +274,7 @@
   .social button {
     background-color: transparent;
     cursor: pointer;
-    color: rgb(173, 173, 173);
+    color: rgb(228, 227, 227);
     border: none;
     margin: 10px 0;
     transition: 0.2s ease-in-out all;

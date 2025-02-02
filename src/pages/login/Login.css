@@ -33,20 +33,18 @@
     padding: 50px 0;
   }
   .wrapper {
-    --input-focus: #e7291c;
-    --font-color: white;
-    --font-color-sub: #7e7e7e;
-    --bg-color: #111;
+    --input-focus: rgb(34, 153, 113);
+    --font-color-sub: rgb(34, 153, 113);
     --bg-color-alt: #474747;
-    --main-color: #fefefe;
+    --main-color: #111;
     /* display: flex; */
     /* flex-direction: column; */
     /* align-items: center; */
     display: flex;
     width: 100%;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: center;
-    align-items: center;
+    align-items: start;
   }
 
   .flip-card__front {
@@ -90,7 +88,7 @@
     font-size: 15px;
     font-weight: 600;
     padding: 5px 10px;
-    color: white;
+    color: black;
     outline: none;
   }
 
@@ -119,7 +117,7 @@
     box-shadow: 4px 4px var(--main-color);
     font-size: 17px;
     font-weight: 600;
-    color: white;
+    color: black;
     cursor: pointer;
   }
 }
@@ -134,20 +132,18 @@
     padding: 50px 0;
   }
   .wrapper {
-    --input-focus: #e7291c;
-    --font-color: white;
-    --font-color-sub: #7e7e7e;
-    --bg-color: #111;
+    --input-focus: rgb(34, 153, 113);
+    --font-color-sub: rgb(34, 153, 113);
     --bg-color-alt: #474747;
-    --main-color: #fefefe;
+    --main-color: #111;
     /* display: flex; */
     /* flex-direction: column; */
     /* align-items: center; */
     display: flex;
     width: 100%;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: center;
-    align-items: center;
+    align-items: start;
   }
 
   .flip-card__front {
@@ -191,7 +187,7 @@
     font-size: 15px;
     font-weight: 600;
     padding: 5px 10px;
-    color: white;
+    color: black;
     outline: none;
   }
 
@@ -220,7 +216,7 @@
     box-shadow: 4px 4px var(--main-color);
     font-size: 17px;
     font-weight: 600;
-    color: white;
+    color: black;
     cursor: pointer;
   }
 }
@@ -237,12 +233,10 @@
     padding: 50px;
   }
   .wrapper {
-    --input-focus: #e7291c;
-    --font-color: white;
-    --font-color-sub: #7e7e7e;
-    --bg-color: #111;
+    --input-focus: rgb(34, 153, 113);
+    --font-color-sub: rgb(34, 153, 113);
     --bg-color-alt: #474747;
-    --main-color: #fefefe;
+    --main-color: #111;
     /* display: flex; */
     /* flex-direction: column; */
     /* align-items: center; */
@@ -294,7 +288,7 @@
     font-size: 15px;
     font-weight: 600;
     padding: 5px 10px;
-    color: white;
+    color: black;
     outline: none;
   }
 
@@ -323,7 +317,7 @@
     box-shadow: 4px 4px var(--main-color);
     font-size: 17px;
     font-weight: 600;
-    color: white;
+    color: black;
     cursor: pointer;
   }
 }
@@ -340,12 +334,10 @@
     padding: 50px;
   }
   .wrapper {
-    --input-focus: #e7291c;
-    --font-color: white;
-    --font-color-sub: #7e7e7e;
-    --bg-color: #111;
+    --input-focus: rgb(34, 153, 113);
+    --font-color-sub: rgb(34, 153, 113);
     --bg-color-alt: #474747;
-    --main-color: #fefefe;
+    --main-color: #111;
     /* display: flex; */
     /* flex-direction: column; */
     /* align-items: center; */
@@ -355,7 +347,6 @@
     justify-content: center;
     align-items: start;
   }
-
   .flip-card__front {
     width: 50%;
     height: 80vh;
@@ -397,7 +388,7 @@
     font-size: 15px;
     font-weight: 600;
     padding: 5px 10px;
-    color: white;
+    color: black;
     outline: none;
   }
 
@@ -426,7 +417,7 @@
     box-shadow: 4px 4px var(--main-color);
     font-size: 17px;
     font-weight: 600;
-    color: white;
+    color: black;
     cursor: pointer;
   }
 }
@@ -443,12 +434,10 @@
     padding: 50px;
   }
   .wrapper {
-    --input-focus: #e7291c;
-    --font-color: white;
-    --font-color-sub: #7e7e7e;
-    --bg-color: #111;
+    --input-focus: rgb(34, 153, 113);
+    --font-color-sub: rgb(34, 153, 113);
     --bg-color-alt: #474747;
-    --main-color: #fefefe;
+    --main-color: #111;
     /* display: flex; */
     /* flex-direction: column; */
     /* align-items: center; */
@@ -458,7 +447,6 @@
     justify-content: center;
     align-items: start;
   }
-
   .flip-card__front {
     width: 50%;
     height: 80vh;
@@ -500,7 +488,7 @@
     font-size: 15px;
     font-weight: 600;
     padding: 5px 10px;
-    color: white;
+    color: black;
     outline: none;
   }
 
@@ -529,7 +517,7 @@
     box-shadow: 4px 4px var(--main-color);
     font-size: 17px;
     font-weight: 600;
-    color: white;
+    color: black;
     cursor: pointer;
   }
 }
