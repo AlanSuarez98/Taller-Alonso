@@ -1,6 +1,7 @@
 import Header from "../../components/header/Header";
 import MainHome from "../../components/mainHome/MainHome";
 import Nav from "../../components/nav/Nav";
+import Footer from "../../components/footer/Footer";
 import "./Home.css";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
       <Nav />
       <Header />
       <MainHome />
+      <Footer />
     </div>
   );
 };

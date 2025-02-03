@@ -10,7 +10,6 @@ const MainHome = () => {
       <Welcome />
       <ServiceList />
       <Contact />
-      <Footer />
     </div>
   );
 };

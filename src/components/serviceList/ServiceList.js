@@ -9,7 +9,7 @@ const ServiceList = () => {
       <h2 className="titleService">Servicios</h2>
       <div className="boxService">
         <div className="cardService">
-          <img src={service1} alt="Mecanica Integral" />
+          <img src={service1} alt="Mecanica Integral" loading="lazy" />
           <h2>Mecanica Integral</h2>
           <p>
             Transmision, tren delantero y frenos, suspension, aire
@@ -18,7 +18,7 @@ const ServiceList = () => {
           </p>
         </div>
         <div className="cardService">
-          <img src={service2} alt="Electronica y Electricidad" />
+          <img src={service2} alt="Electronica y Electricidad" loading="lazy" />
           <h2>Electronica y Electricidad</h2>
           <p>
             Mecatronica, Electronica de motor, de confort y de seguridad (abs,
@@ -26,7 +26,7 @@ const ServiceList = () => {
           </p>
         </div>
         <div className="cardService">
-          <img src={service3} alt="Mecatronica" />
+          <img src={service3} alt="Mecatronica" loading="lazy" />
           <h2>Mecatronica</h2>
           <p>
             Mecatronica es la integracion de mecanica, electronica y software

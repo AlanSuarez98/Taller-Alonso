@@ -1,238 +1,118 @@
+/* Base styles */
+.welcome {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgWelcome {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgWelcome img {
+  width: 100%;
+  height: 100%;
+}
+
+.textWelcome {
+  width: 45%;
+  height: 100%;
+  background-color: rgb(34, 153, 113);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.textWelcome h2 {
+  margin: -45px 0 5px 0;
+  font-size: 0.8rem;
+}
+
+.textWelcome h2 span {
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+
+.textWelcome h3 {
+  font-size: 0.8rem;
+  margin: 0 0 10px 0;
+}
+
+.textWelcome p {
+  font-size: 0.6rem;
+  width: 90%;
+  height: 25%;
+  text-align: center;
+  color: rgb(228, 227, 227);
+}
+
+/* Media Queries */
+
 @media (max-width: 425px) {
-  .welcome {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .imgWelcome {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .imgWelcome img {
-    width: 100%;
-    height: 100%;
-  }
-  .textWelcome {
-    width: 45%;
-    height: 100%;
-    background-color: rgb(34, 153, 113);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    flex-direction: column;
-  }
   .textWelcome h2 {
-    font-size: 0.8rem;
-    margin: -25px 0 5px 0;
+    font-size: 0.7rem;
   }
   .textWelcome h2 span {
-    font-size: 0.8rem;
-    text-decoration: underline;
+    font-size: 0.7rem;
   }
   .textWelcome h3 {
-    font-size: 0.8rem;
-    margin: 0 0 10px 0;
+    font-size: 0.7rem;
   }
   .textWelcome p {
+    width: 80%;
     font-size: 0.6rem;
-    width: 90%;
-    height: 25%;
-    text-align: center;
-    color: rgb(228, 227, 227);
   }
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
-  .welcome {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .imgWelcome {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .imgWelcome img {
-    width: 100%;
-    height: 100%;
-  }
-  .textWelcome {
-    width: 45%;
-    height: 100%;
-    background-color: rgb(34, 153, 113);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    flex-direction: column;
-  }
-  .textWelcome h2 {
-    font-size: 0.8rem;
-    margin: -25px 0 5px 0;
-  }
-  .textWelcome h2 span {
-    font-size: 0.8rem;
-    text-decoration: underline;
-  }
-  .textWelcome h3 {
-    font-size: 0.8rem;
-    margin: 0 0 25px 0;
-  }
   .textWelcome p {
     font-size: 0.5rem;
     width: 65%;
-    height: 25%;
-    text-align: center;
-    color: rgb(228, 227, 227);
+  }
+
+  .textWelcome h3 {
+    margin: 0 0 25px 0;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px),
+  (min-width: 1025px) and (max-width: 1440px),
+  (min-width: 1441px) {
   .welcome {
-    width: 100%;
     height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-  .imgWelcome {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .imgWelcome img {
-    width: 100%;
-    height: 100%;
-  }
-  .textWelcome {
-    width: 45%;
-    height: 100%;
-    background-color: rgb(34, 153, 113);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    flex-direction: column;
-  }
-  .textWelcome h2 {
-    margin: -25px 0 25px 0;
-  }
-  .textWelcome h2 span {
-    text-decoration: underline;
-  }
-  .textWelcome h3 {
-    margin: 0 0 25px 0;
-  }
-  .textWelcome p {
-    width: 65%;
-    text-align: center;
-    color: rgb(228, 227, 227);
-  }
-}
 
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .welcome {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .imgWelcome {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .imgWelcome img {
-    width: 100%;
-    height: 100%;
-  }
   .textWelcome {
     width: 45%;
-    height: 100%;
-    background-color: rgb(34, 153, 113);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    flex-direction: column;
   }
   .textWelcome h2 {
-    margin: -25px 0 25px 0;
+    font-size: 1.5rem;
   }
   .textWelcome h2 span {
-    text-decoration: underline;
+    font-size: 1.5rem;
   }
   .textWelcome h3 {
-    margin: 0 0 25px 0;
+    font-size: 1.5rem;
   }
   .textWelcome p {
     width: 65%;
-    text-align: center;
-    color: rgb(228, 227, 227);
+    font-size: 1.2rem;
   }
-}
-@media (min-width: 1441px) {
-  .welcome {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .imgWelcome {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .imgWelcome img {
-    width: 100%;
-    height: 100%;
-  }
-  .textWelcome {
-    width: 45%;
-    height: 100%;
-    background-color: rgb(34, 153, 113);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    flex-direction: column;
-  }
+
   .textWelcome h2 {
     margin: -25px 0 25px 0;
   }
-  .textWelcome h2 span {
-    text-decoration: underline;
-  }
+
   .textWelcome h3 {
     margin: 0 0 25px 0;
-  }
-  .textWelcome p {
-    width: 65%;
-    text-align: center;
-    color: rgb(228, 227, 227);
   }
 }

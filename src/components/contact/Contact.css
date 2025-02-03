@@ -1,213 +1,125 @@
+/* Estilos comunes para todas las resoluciones */
+.contact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact h2 {
+  padding: 0 0 25px 0;
+}
+
+.boxContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.textContact {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.textContact p {
+  width: 75%;
+  padding: 10px 0;
+}
+
+.textContact p span {
+  font-weight: bold;
+}
+
+.mapPreview {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.span {
+  font-weight: bold;
+}
+
+/* Resolución max-width: 425px */
 @media (max-width: 425px) {
-  .contact {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .contact h2 {
-    padding: 0 0 25px 0;
-  }
   .boxContact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
-  }
-  .mapPreview {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .textContact {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
-  .textContact p {
-    width: 75%;
-    padding: 10px 0;
-  }
-  .textContact p span {
-    font-weight: bold;
-  }
+
   .mapPreview {
-    width: 50%;
-  }
-  .span {
-    font-weight: bold;
+    width: 100%;
   }
 }
 
+/* Resolución min-width: 426px y max-width: 768px */
 @media (min-width: 426px) and (max-width: 768px) {
-  .contact {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .contact h2 {
-    padding: 0 0 25px 0;
-  }
   .boxContact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
-  }
-  .mapPreview {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .textContact {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
-  .textContact p {
-    width: 75%;
-    padding: 10px 0;
-  }
-  .textContact p span {
-    font-weight: bold;
-  }
+
   .mapPreview {
-    width: 50%;
-  }
-  .span {
-    font-weight: bold;
+    width: 100%;
   }
 }
 
+/* Resolución min-width: 769px y max-width: 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .contact {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .contact h2 {
-    padding: 0 0 25px 0;
-  }
-  .boxContact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-  }
   .textContact {
     width: 50%;
-    display: flex;
-    flex-direction: column;
     justify-content: start;
     align-items: start;
   }
-  .textContact p {
-    width: 75%;
-    padding: 10px 0;
-  }
-  .textContact p span {
-    font-weight: bold;
-  }
+
   .mapPreview {
     width: 50%;
   }
-  .span {
-    font-weight: bold;
-  }
 }
 
+/* Resolución min-width: 1025px y max-width: 1440px */
 @media (min-width: 1025px) and (max-width: 1440px) {
-  .contact {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .contact h2 {
-    padding: 0 0 25px 0;
-  }
-  .boxContact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-  }
   .textContact {
     width: 50%;
-    display: flex;
-    flex-direction: column;
     justify-content: start;
     align-items: start;
   }
-  .textContact p {
-    width: 75%;
-    padding: 10px 0;
-  }
-  .textContact p span {
-    font-weight: bold;
-  }
+
   .mapPreview {
     width: 50%;
-  }
-  .span {
-    font-weight: bold;
   }
 }
 
+/* Resolución min-width: 1441px */
 @media (min-width: 1441px) {
-  .contact {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .contact h2 {
-    padding: 0 0 25px 0;
-  }
-  .boxContact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-  }
   .textContact {
     width: 50%;
-    display: flex;
-    flex-direction: column;
     justify-content: start;
     align-items: start;
   }
-  .textContact p {
-    width: 75%;
-    padding: 10px 0;
-  }
-  .textContact p span {
-    font-weight: bold;
-  }
+
   .mapPreview {
     width: 50%;
-  }
-  .span {
-    font-weight: bold;
   }
 }

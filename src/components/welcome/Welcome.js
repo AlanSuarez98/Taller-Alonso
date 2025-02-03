@@ -6,7 +6,7 @@ const Welcome = () => {
   return (
     <div className="welcome">
       <div className="imgWelcome">
-        <img src={img1} alt="imagen 1" />
+        <img src={img1} alt="imagen 1" loading="lazy" />
       </div>
       <div className="textWelcome">
         <h2>

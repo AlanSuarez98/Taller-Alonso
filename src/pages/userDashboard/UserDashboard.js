@@ -1,9 +1,9 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useCallback } from "react";
 import { AuthContext } from "../../service/AuthContext";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import Nav from "../../components/nav/Nav";
 import "./UserDashboard.css";
-import { useNavigate } from "react-router-dom";
 
 const UserDashboard = () => {
   const [userAppointments, setUserAppointments] = useState([]);
@@ -11,49 +11,39 @@ const UserDashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuthenticated && user) {
-      const appointments =
-        JSON.parse(localStorage.getItem("appointments")) || [];
-      const userAppointments = appointments.filter(
-        (apt) => apt.userId === user.email
-      );
+    if (!isAuthenticated || !user) return;
 
-      // Ordenar los turnos
-      userAppointments.sort((a, b) => {
-        // Primero, ordenar por estado: "En curso" primero
-        if (a.status === "En curso" && b.status !== "En curso") return -1;
-        if (b.status === "En curso" && a.status !== "En curso") return 1;
-
-        // Luego, ordenar por fecha y hora: de más reciente a más antiguo
-        return new Date(b.datetime) - new Date(a.datetime);
-      });
-
-      setUserAppointments(userAppointments);
-    }
-  }, [isAuthenticated, user]);
-
-  // Si no hay usuario autenticado, no renderizar nada
-  if (!isAuthenticated || !user) {
-    return null;
-  }
-
-  const handleCancelAppointment = (appointmentId) => {
     const appointments = JSON.parse(localStorage.getItem("appointments")) || [];
-    const updatedAppointments = appointments.map((apt) => {
-      if (apt.datetime === appointmentId) {
-        return { ...apt, status: "Cancelado" };
-      }
-      return apt;
+    const filteredAppointments = appointments.filter(
+      (apt) => apt.userId === user.email
+    );
+
+    filteredAppointments.sort((a, b) => {
+      if (a.status === "En curso" && b.status !== "En curso") return -1;
+      if (b.status === "En curso" && a.status !== "En curso") return 1;
+      return new Date(b.datetime) - new Date(a.datetime);
     });
 
-    localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
-    setUserAppointments(
-      updatedAppointments.filter((apt) => apt.userId === user.email)
-    );
-  };
+    setUserAppointments(filteredAppointments);
+  }, [isAuthenticated, user]);
+
+  const handleCancelAppointment = useCallback(
+    (appointmentId) => {
+      const appointments =
+        JSON.parse(localStorage.getItem("appointments")) || [];
+      const updatedAppointments = appointments.map((apt) =>
+        apt.datetime === appointmentId ? { ...apt, status: "Cancelado" } : apt
+      );
+
+      localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+      setUserAppointments(
+        updatedAppointments.filter((apt) => apt.userId === user.email)
+      );
+    },
+    [user]
+  );
 
   const handleDownloadInvoice = (base64PDF, invoiceName = "factura.pdf") => {
-    // Crear un enlace temporal para descargar el archivo
     const link = document.createElement("a");
     link.href = `data:application/pdf;base64,${base64PDF}`;
     link.download = invoiceName;
@@ -65,39 +55,47 @@ const UserDashboard = () => {
     navigate("/iniciar-sesion");
   };
 
+  if (!isAuthenticated || !user) return null;
+
   return (
     <>
       <Nav />
       <div className="userDashboard">
         <div className="userBoxDashboard">
           <h2>
-            Mi cuenta{" "}
+            Mi cuenta
             <button className="logout" onClick={handleLogout}>
               Cerrar Sesión
             </button>
           </h2>
           <div className="infoUser">
-            <p>Nombre: {user.nombre}</p>
-            <p>Email: {user.email}</p>
-            <p>Marca: {user.marca}</p>
-            <p>Modelo: {user.modelo}</p>
-            <p>Año: {user.año}</p>
-            <p>Color: {user.color}</p>
-            <p>Kilometraje: {user.kilometraje}</p>
-            <p>Patente: {user.patente}</p>
+            {[
+              "nombre",
+              "email",
+              "marca",
+              "modelo",
+              "año",
+              "color",
+              "kilometraje",
+              "patente",
+            ].map((attr) => (
+              <p key={attr}>
+                <strong>{attr.charAt(0).toUpperCase() + attr.slice(1)}:</strong>{" "}
+                {user[attr]}
+              </p>
+            ))}
           </div>
           <div className="requestUser">
             <h3>Turnos solicitados</h3>
             <div className="boxRequestUser">
-              {userAppointments.length > 0 ? (
+              {userAppointments.length ? (
                 userAppointments.map((apt) => (
                   <div className="requestUserForm" key={apt.datetime}>
                     <p>
-                      <strong>Servicio</strong> <br />
-                      {apt.tipoServicio}
+                      <strong>Servicio:</strong> {apt.tipoServicio}
                     </p>
                     <p>
-                      <strong>Fecha</strong> <br />{" "}
+                      <strong>Fecha:</strong>{" "}
                       {new Date(apt.datetime).toLocaleString("es-AR", {
                         year: "numeric",
                         month: "2-digit",
@@ -108,8 +106,7 @@ const UserDashboard = () => {
                       })}
                     </p>
                     <p>
-                      <strong>Estado</strong> <br />
-                      {apt.status}
+                      <strong>Estado:</strong> {apt.status}
                     </p>
                     {apt.status === "En curso" && (
                       <button
